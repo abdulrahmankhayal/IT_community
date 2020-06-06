@@ -4,6 +4,8 @@ import os
 import zipfile
 import pathlib
 from PIL import Image
+from IPython.display import display
+from object_detection.utils import visualization_utils as vis_util
 
 
 def load_model(model_name):
