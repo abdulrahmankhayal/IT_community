@@ -48,18 +48,26 @@ def run_inference_for_single_image(model, image):
   return output_dict
 
 
-def show_inference(model, image_path,category_index):
+def show_inference(model, image_path,category_index,mask=True):
   image_np = np.array(Image.open(image_path))
   output_dict = run_inference_for_single_image(model, image_np)
-
-  vis_util.visualize_boxes_and_labels_on_image_array(
-      image_np,
-      output_dict['detection_boxes'],
-      output_dict['detection_classes'],
-      output_dict['detection_scores'],
-      category_index,
-      instance_masks=output_dict.get('detection_masks_reframed', None),
-      use_normalized_coordinates=True,
-      line_thickness=8)
-
+  if mask:
+    vis_util.visualize_boxes_and_labels_on_image_array(
+        image_np,
+        output_dict['detection_boxes'],
+        output_dict['detection_classes'],
+        output_dict['detection_scores'],
+        category_index,
+        instance_masks=output_dict.get('detection_masks_reframed', None),
+        use_normalized_coordinates=True,
+        line_thickness=8)
+  else:
+    vis_util.visualize_boxes_and_labels_on_image_array(
+        image_np,
+        output_dict['detection_boxes'],
+        output_dict['detection_classes'],
+        output_dict['detection_scores'],
+        category_index,
+        use_normalized_coordinates=True,
+        line_thickness=8)
   display(Image.fromarray(image_np))
