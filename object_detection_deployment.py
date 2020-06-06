@@ -3,6 +3,7 @@ import numpy as np
 import os
 import zipfile
 import pathlib
+from PIL import Image
 
 
 def load_model(model_name):
