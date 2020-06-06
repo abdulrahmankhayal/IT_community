@@ -2,6 +2,8 @@ import tensorflow as tf
 import numpy as np
 import os
 import zipfile
+import pathlib
+
 
 def load_model(model_name):
   base_url = 'http://download.tensorflow.org/models/object_detection/'
