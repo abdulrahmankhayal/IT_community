@@ -8,7 +8,7 @@ from IPython.display import display
 
 import tensorflow as tf
 from object_detection.utils import visualization_utils as vis_util
-
+from object_detection.utils import ops as utils_ops
 
 
 def load_model(model_name):
