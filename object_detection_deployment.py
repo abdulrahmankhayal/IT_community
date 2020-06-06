@@ -38,7 +38,7 @@ def run_inference_for_single_image(model, image):
                  for key,value in output_dict.items()}
   output_dict['num_detections'] = num_detections
   output_dict['detection_classes'] = output_dict['detection_classes'].astype(np.int64)
-   if 'detection_masks' in output_dict:
+  if 'detection_masks' in output_dict:
     detection_masks_reframed = utils_ops.reframe_box_masks_to_image_masks(
               output_dict['detection_masks'], output_dict['detection_boxes'],
                image.shape[0], image.shape[1])      
