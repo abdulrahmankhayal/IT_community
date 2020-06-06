@@ -1,4 +1,4 @@
-
+import numpy as np
 import pathlib
 import six.moves.urllib as urllib
 import tarfile
