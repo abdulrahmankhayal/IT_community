@@ -1,19 +1,12 @@
 
 import pathlib
-import numpy as np
-import os
 import six.moves.urllib as urllib
-import sys
 import tarfile
-import tensorflow as tf
-import zipfile
-from PIL import Image
-from collections import defaultdict
-from io import StringIO
-from matplotlib import pyplot as plt
 
+from PIL import Image
 from IPython.display import display
 
+import tensorflow as tf
 from object_detection.utils import visualization_utils as vis_util
 
 
