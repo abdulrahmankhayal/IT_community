@@ -7,7 +7,7 @@ import sys
 import tarfile
 import tensorflow as tf
 import zipfile
-
+from PIL import Image
 from collections import defaultdict
 from io import StringIO
 from matplotlib import pyplot as plt
