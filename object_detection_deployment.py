@@ -14,16 +14,9 @@ from matplotlib import pyplot as plt
 
 from IPython.display import display
 
-from object_detection.utils import ops as utils_ops
-from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 
 
-# patch tf1 into `utils.ops`
-utils_ops.tf = tf.compat.v1
-
-# Patch the location of gfile
-tf.gfile = tf.io.gfile
 
 def load_model(model_name):
   base_url = 'http://download.tensorflow.org/models/object_detection/'
@@ -55,7 +48,7 @@ def run_inference_for_single_image(model, image):
   return output_dict
 
 
-def show_inference(model, image_path):
+def show_inference(model, image_path,category_index):
   image_np = np.array(Image.open(image_path))
   output_dict = run_inference_for_single_image(model, image_np)
 
